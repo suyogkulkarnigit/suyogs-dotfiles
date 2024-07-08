@@ -5,7 +5,7 @@
 ## 2. Opne 'example.zsh-theme' file and replace all the contents of the file with this file.
 ## 3. Run 'omz theme set example'
 ## 4. and wolla you have cracked theme to work with 😈
-## Very human friendly and highkly customizable 😉
+## Very human friendly and highly customizable 😉
 
 #Colors
 BOLD_RED='\033[1;31m'
