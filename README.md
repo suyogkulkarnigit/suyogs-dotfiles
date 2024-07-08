@@ -1,0 +1,3 @@
+## Some crack sh files i use on day to day
+
+WIP...
