@@ -2,7 +2,7 @@
 ## Before that please make sure you have oh my zsh installed
 ## Use commands given below
 ## 1. cd $ZSH_CUSTOM/themes
-## 2. Opne 'example.zsh-theme' file and replace all the contents of the file with this file.
+## 2. Open 'example.zsh-theme' file and replace all the contents of the file with this file.
 ## 3. Run 'omz theme set example'
 ## 4. and wolla you have cracked theme to work with 😈
 ## Very human friendly and highly customizable 😉
