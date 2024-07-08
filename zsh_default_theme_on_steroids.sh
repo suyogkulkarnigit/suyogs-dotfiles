@@ -1,5 +1,5 @@
 ## Copy paste this to your example theme in oh my zsh
-## Before that please make sure you have omy zsh installed
+## Before that please make sure you have oh my zsh installed
 ## Use commands given below
 ## 1. cd $ZSH_CUSTOM/themes
 ## 2. Opne 'example.zsh-theme' file and replace all the contents of the file with this file.
