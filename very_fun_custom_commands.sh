@@ -58,6 +58,7 @@ back () { cd $(printf '../%.0s' $(seq 1 $1)) ;}
 
 setup () {
 ##### Can be updated in future, for now harcoded seems convenient to me
+## This creates a folder structuer for client side internal and workspace for other things
   PARENT_FOLDER="$HOME/Documents"
   WORKSPACE_PATHS=(
     "${PARENT_FOLDER}/workspace" 
