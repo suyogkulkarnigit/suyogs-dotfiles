@@ -84,6 +84,9 @@ setup () {
 ## Git functions
 status () { git status ;}
 branch () { echo "\n On ${BOLD_RED}$(git rev-parse --abbrev-ref HEAD)${NC}" ;}
+git_current_origin () {git ls-remote --get-url | sed -e 's/^.*\://' | sed -e 's/\.git.*//' ;}
+ghpull () {open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)" ;} # Open Github pull req.
+glpull () {open "https://gitlab.com/$(git_current_origin)/pull/new/$(git_current_branch)" ;} # Open Gitlab pull req.
 
 function git_folder(){
   url=$1
@@ -211,4 +214,3 @@ cat << "EOF"
    ^    ^   
 EOF
 }
-
