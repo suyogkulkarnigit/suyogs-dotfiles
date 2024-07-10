@@ -7,16 +7,6 @@
 #  \_____|\__,_||___/ \__|\___/ |_| |_| |_| |____/  \__,_||___/|_| |_| By Suyog kulkarni for Suyog kulkarni 😈
 # 
 
-## To make this work
-## Open you bash bashrc or zshrc
-## and add ~/.very_fun_custom_commands.sh to it
-## And run source zshrc / bashrc
-## Wolla crackhead commands ready to use
-
-## Note:
-## This scripts is still in progress does not caontain all of the things from my 
-## local will updated when free 
-
 
 ## source
 save () { source ~/.my_custom_commands.sh ;}
@@ -58,7 +48,6 @@ back () { cd $(printf '../%.0s' $(seq 1 $1)) ;}
 
 setup () {
 ##### Can be updated in future, for now harcoded seems convenient to me
-## This creates a folder structuer for client side internal and workspace for other things
   PARENT_FOLDER="$HOME/Documents"
   WORKSPACE_PATHS=(
     "${PARENT_FOLDER}/workspace" 
@@ -86,8 +75,8 @@ setup () {
 status () { git status ;}
 branch () { echo "\n On ${BOLD_RED}$(git rev-parse --abbrev-ref HEAD)${NC}" ;}
 git_current_origin () {git ls-remote --get-url | sed -e 's/^.*\://' | sed -e 's/\.git.*//' ;}
-ghpull () {open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)" ;} # Open Github pull req.
-glpull () {open "https://gitlab.com/$(git_current_origin)/pull/new/$(git_current_branch)" ;} # Open Gitlab pull req.
+ghpull () {open "https://github.com/$(git_current_origin)/pull/new/$(branch)" ;}
+glpull () {open "https://gitlab.com/$(git_current_origin)/pull/new/$(brnach)" ;}
 
 function git_folder(){
   url=$1
@@ -215,3 +204,4 @@ cat << "EOF"
    ^    ^   
 EOF
 }
+
