@@ -14,8 +14,8 @@
 ## Wolla crackhead commands ready to use
 
 ## Note:
-## This scripts is still in progress does not caontain all of the things from my 
-## local will updated when free 
+## This script is still in progress does not contain all of the things from my 
+## local will be updated when free 
 
 
 ## source
