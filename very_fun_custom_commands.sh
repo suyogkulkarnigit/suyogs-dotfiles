@@ -7,6 +7,15 @@
 #  \_____|\__,_||___/ \__|\___/ |_| |_| |_| |____/  \__,_||___/|_| |_| By Suyog kulkarni for Suyog kulkarni 😈
 # 
 
+## To make this work
+## Open you bash bashrc or zshrc
+## and add ~/.very_fun_custom_commands.sh to it
+## And run source zshrc / bashrc
+## Wolla crackhead commands ready to use
+
+## Note:
+## This script is still in progress does not contain all of the things from my 
+## local will be updated when free 
 
 ## source
 save () { source ~/.my_custom_commands.sh ;}
