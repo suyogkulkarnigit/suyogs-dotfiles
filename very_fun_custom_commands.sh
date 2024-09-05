@@ -14,8 +14,9 @@
 ## Wolla crackhead commands ready to use
 
 ## Note:
-## This script is still in progress does not contain all of the things from my 
-## local will be updated when free 
+## This scripts is still in progress does not caontain all of the things from my 
+## local will updated when free 
+
 
 ## source
 save () { source ~/.my_custom_commands.sh ;}
@@ -46,6 +47,16 @@ echo '\t Time: '$(date) '\n'
 echo '\t' $(top -l 1 | grep -E "^CPU") '\n'
 echo '\t' $(top -l 1 | grep -E "^Phys")
 echo ''
+}
+
+## Check internet speed
+net_speed() {
+  if command -v python3 &> /dev/null; then
+    PYTHON_CMD="python3"
+  elif command -v python &> /dev/null; then
+    PYTHON_CMD="python"
+  fi
+  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | $PYTHON_CMD -
 }
 
 ## Folders
@@ -81,11 +92,28 @@ setup () {
 }
 
 ## Git functions
-status () { git status ;}
-branch () { echo "\n On ${BOLD_RED}$(git rev-parse --abbrev-ref HEAD)${NC}" ;}
+alias gst='git status'
+alias branch='git rev-parse --abbrev-ref HEAD'
+
+gitlab-pull () {echo "https://gitlab.com/splio-org/common/airflow-dags/-/merge_requests/new?merge_request[source_branch]=$(git rev-parse --abbrev-ref HEAD)";}
+github-pull () {echo "https://github.com/positsource/airflow-dags/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1";}
 git_current_origin () {git ls-remote --get-url | sed -e 's/^.*\://' | sed -e 's/\.git.*//' ;}
-ghpull () {open "https://github.com/$(git_current_origin)/pull/new/$(branch)" ;}
-glpull () {open "https://gitlab.com/$(git_current_origin)/pull/new/$(brnach)" ;}
+
+function git_main_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local branch
+  for branch in develop master main; do
+    if command git show-ref -q --verify refs/heads/$branch; then
+      echo $branch
+      return 0
+    fi
+  done
+
+  echo develop
+  return 1
+}
+
+# --> Pull req.
 
 function git_folder(){
   url=$1
@@ -213,4 +241,3 @@ cat << "EOF"
    ^    ^   
 EOF
 }
-
