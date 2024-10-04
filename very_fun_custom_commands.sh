@@ -62,19 +62,14 @@ net_speed() {
 ## Folders
 root () { cd ~ ;}
 ws () { cd $HOME/Documents/workspace/$1 ;}
-pst () { cd $HOME/Documents/workspace/positsource/$1 ;}
-tc () { cd $HOME/Documents/workspace/tinyclues/$1 ;}
+pst () { cd $HOME/Documents/workspace/$add workspace$/$1 ;}
+tc () { cd $HOME/Documents/workspace/$add workspace$/$1 ;}
 back () { cd $(printf '../%.0s' $(seq 1 $1)) ;}
 
 setup () {
 ##### Can be updated in future, for now harcoded seems convenient to me
   PARENT_FOLDER="$HOME/Documents"
   WORKSPACE_PATHS=(
-    "${PARENT_FOLDER}/workspace" 
-    "${PARENT_FOLDER}/workspace/positsource"
-    "${PARENT_FOLDER}/workspace/tinyclues"
-    "${PARENT_FOLDER}/workspace/tinyclues/gitlab"
-    "${PARENT_FOLDER}/workspace/tinyclues/github"
   )
   if [ -d $PARENT_FOLDER ]; then
     for folder in ${WORKSPACE_PATHS[@]} 
